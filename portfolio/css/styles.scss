@@ -1,17 +1,20 @@
+@import './_variables';
 @import './_navigation';
-@import url('https://fonts.googleapis.com/css2?family=Bevan&family=Domine:wght@400;500&family=Pontano+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Domine:wght@400;500&family=Pontano+Sans&display=swap');
 
 * {
     box-sizing: border-box;
     font-family: 'Pontano Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
-    display: inline-block;
     line-height: 1;
     text-transform: none;
     letter-spacing: normal;
@@ -56,9 +59,9 @@
 .button {
     cursor: pointer;
     color: #FFF;
-    font-size: 20px;
-    background-color: #ff9fd8;
-    padding: 12px 16px;
+    font-size: 18px;
+    background-color: $amethyst;
+    padding: 16px 16px;
     border-radius: 8px;
     text-decoration: none;
     text-transform: uppercase;
@@ -74,6 +77,14 @@ h2, h3, h4 {
         font-family: 'Domine', serif;
     }
 
+::selection {
+    background: #ff9fd8;
+}
+
+::-moz-selection {
+    background: #ff9fd8;
+}
+
 section {
     min-height: 33vh;
 
@@ -82,7 +93,7 @@ section {
         margin-bottom: 32px;
         text-transform: uppercase;
         font-size: 36px;
-        color: #313131;
+        color: #000;
     }
 
     h3 {
@@ -104,7 +115,7 @@ main {
         display: flex;
         align-items: center;
 
-        background-image: url('../images/circle.svg');
+        background-image: url('../images/circle2.svg');
         background-color: #12002f;
         background-position: center;
         background-repeat: no-repeat;
@@ -119,25 +130,25 @@ main {
 
 
             h1 {
-                font-size: 72px;
+                font-size: 160px;
                 text-align: center;
-                font-family: 'Bevan', cursive;
+                font-family: 'Passion One', cursive;
                 text-shadow: 3px 3px #1f1f1f;
                 color: #eee;
 
                 @media screen and (max-width: 767px) {
-                    font-size: 38px;
+                    font-size: 80px;
                 }
             }
         }
     }
 
     .about {
-        background-color: #eee; 
+        background-color: $orange-yellow-crayola; 
 
         .container {
             padding-top: 64px;
-            padding-bottom: 64px;
+            padding-bottom: 98px;
 
             .about-grid {
                 display: grid;
@@ -151,7 +162,7 @@ main {
                 }
 
                 .about-element {
-                    background-color: #FFF;
+                    background-color: #fff;
                     border-radius: 16px;
                     overflow: hidden;
                     box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
@@ -163,7 +174,7 @@ main {
                     .img-box {
                         display: block;
                         width: 100%;
-                        border-bottom: 5px solid #ff9fdb;
+                        border-bottom: 5px solid $amethyst;
 
                         .img {
                             display: block;
@@ -198,7 +209,7 @@ main {
     .projects {
         padding-top: 64px;
         padding-bottom: 64px;
-        background-color: #f6d12d;
+        background-color: $sandy-brown;
 
         .projects-grid {
             display: grid;
@@ -211,8 +222,8 @@ main {
                 overflow: hidden;
                 display: flex;
                 flex-direction: row-reverse;
-                border-bottom: 5px solid #ff9fdb;
-                background-color: #FDF2C4;
+                border-bottom: 5px solid $purple;
+                background-color: #fff;
 
                 @media screen and (max-width: 767px) {
                     flex-direction: column;
@@ -220,13 +231,17 @@ main {
 
                 .img-box {
                     display: block;
-                    width: 100%;
+                    flex: 0 0 auto;
 
                     .img {
+                        max-width: 34vw;
                         display: block;
-                        width: 100%;
                         object-fit: cover;
                         object-position: top;
+
+                        @media screen and (max-width: 767px) {
+                            max-width: 100%;
+                        }
                     }
                 }
 
@@ -261,16 +276,16 @@ main {
     }
 
     .contact {
-        background-color: #9b75d7;
+        background-color: $brick;
         color: white;
+
+        h2 {
+            color: white;
+        }
 
         .container {
             padding-top: 64px;
             padding-bottom: 64px;
-
-            h2 {
-                color: white;
-            }
 
             .contact-grid {
                 display: grid;
@@ -289,7 +304,7 @@ main {
                         align-items: center;
                         margin-bottom: 16px;
                         margin-top: 16px;
-                        color: white;
+                        color: #fff;
                         cursor: pointer;
                         text-decoration: none;
 
@@ -318,6 +333,7 @@ main {
 
                         label {
                             line-height: 1.75;
+                            font-size: 18px;
                         }
 
                         .form-element, .form-area {
@@ -327,7 +343,7 @@ main {
                             border-radius: 8px;
                             padding: 8px 16px;
                             font-size: 20px;
-                            color: #313131;
+                            color: #000;
 
                             &::placeholder {
                                 color: rgb(138, 138, 138);
